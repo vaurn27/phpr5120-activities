@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -12,6 +11,7 @@
     .branch { break-inside: avoid; }
     input, textarea { border: 1px solid #aaa !important; background: #fff !important; }
     header, .center-node { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    @page { margin: 0.5in; }
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
   body {
@@ -22,143 +22,156 @@
   }
   .container { max-width: 860px; margin: 0 auto; }
 
-header {
-text-align: center;
-padding: 18px;
-background: linear-gradient(135deg, #1e3a5f, #2d6a9f);
-color: #fff;
-border-radius: 10px;
-margin-bottom: 16px;
-}
-header h1 { font-size: 1.35em; margin-bottom: 4px; }
-header p  { font-size: 0.86em; opacity: 0.88; }
+  header {
+    text-align: center;
+    padding: 18px;
+    background: linear-gradient(135deg, #1e3a5f, #2d6a9f);
+    color: #fff;
+    border-radius: 10px;
+    margin-bottom: 16px;
+  }
+  header h1 { font-size: 1.35em; margin-bottom: 4px; }
+  header p  { font-size: 0.86em; opacity: 0.88; }
 
-.instructions {
-background: #fff;
-border-left: 4px solid #2d6a9f;
-padding: 10px 15px;
-margin-bottom: 16px;
-border-radius: 0 7px 7px 0;
-font-size: 0.86em;
-line-height: 1.6;
-color: #2d3748;
-}
+  .instructions {
+    background: #fff;
+    border-left: 4px solid #2d6a9f;
+    padding: 10px 15px;
+    margin-bottom: 16px;
+    border-radius: 0 7px 7px 0;
+    font-size: 0.86em;
+    line-height: 1.6;
+    color: #2d3748;
+  }
 
-.student-info {
-display: flex; gap: 12px; flex-wrap: wrap;
-margin-bottom: 16px; padding: 12px;
-background: #fff; border-radius: 8px;
-box-shadow: 0 2px 6px rgba(0,0,0,0.07);
-}
-.student-info .field { flex: 1; min-width: 160px; }
+  .student-info {
+    display: flex; gap: 12px; flex-wrap: wrap;
+    margin-bottom: 16px; padding: 12px;
+    background: #fff; border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.07);
+  }
+  .student-info .field { flex: 1; min-width: 160px; }
 
-.center-node {
-background: #1e3a5f;
-color: #fff;
-text-align: center;
-padding: 12px 20px;
-border-radius: 40px;
-font-size: 1.1em;
-font-weight: 700;
-max-width: 380px;
-margin: 0 auto 18px;
-box-shadow: 0 3px 10px rgba(30,58,95,0.3);
-}
+  .center-node {
+    background: #1e3a5f;
+    color: #fff;
+    text-align: center;
+    padding: 12px 20px;
+    border-radius: 40px;
+    font-size: 1.1em;
+    font-weight: 700;
+    max-width: 380px;
+    margin: 0 auto 18px;
+    box-shadow: 0 3px 10px rgba(30,58,95,0.3);
+  }
 
-.branches {
-display: flex;
-flex-direction: column;
-gap: 16px;
-}
+  .branches { display: flex; flex-direction: column; gap: 16px; }
 
-.branch {
-background: #fff;
-border-radius: 10px;
-padding: 16px 18px;
-box-shadow: 0 2px 7px rgba(0,0,0,0.07);
-border-left: 5px solid #ccc;
-}
-.branch h2 {
-font-size: 0.97em;
-margin-bottom: 13px;
-display: flex;
-align-items: baseline;
-gap: 8px;
-}
-.slide-ref {
-font-size: 0.72em;
-font-weight: 400;
-color: #a0aec0;
-}
+  .branch {
+    background: #fff;
+    border-radius: 10px;
+    padding: 16px 18px;
+    box-shadow: 0 2px 7px rgba(0,0,0,0.07);
+    border-left: 5px solid #ccc;
+  }
+  .branch h2 {
+    font-size: 0.97em;
+    margin-bottom: 13px;
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+  }
+  .slide-ref { font-size: 0.72em; font-weight: 400; color: #a0aec0; }
 
-.fields-row {
-display: grid;
-grid-template-columns: 1fr 1fr;
-gap: 10px;
-margin-bottom: 10px;
-}
-@media (max-width: 560px) { .fields-row { grid-template-columns: 1fr; } }
+  .fields-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-bottom: 10px;
+  }
+  @media (max-width: 560px) { .fields-row { grid-template-columns: 1fr; } }
 
-.field label {
-display: block;
-font-size: 0.8em;
-font-weight: 600;
-color: #4a5568;
-margin-bottom: 3px;
-}
-.field input[type=“text”] {
-width: 100%;
-padding: 7px 9px;
-border: 1.5px solid #e2e8f0;
-border-radius: 5px;
-font-size: 0.88em;
-transition: border-color 0.18s;
-}
-.field input:focus {
-outline: none;
-border-color: #2d6a9f;
-box-shadow: 0 0 0 2px rgba(45,106,159,0.13);
-}
-.field textarea {
-width: 100%;
-padding: 7px 9px;
-border: 1.5px solid #e2e8f0;
-border-radius: 5px;
-font-size: 0.88em;
-resize: vertical;
-min-height: 58px;
-transition: border-color 0.18s;
-}
-.field textarea:focus {
-outline: none;
-border-color: #2d6a9f;
-box-shadow: 0 0 0 2px rgba(45,106,159,0.13);
-}
+  .field label {
+    display: block;
+    font-size: 0.8em;
+    font-weight: 600;
+    color: #4a5568;
+    margin-bottom: 3px;
+  }
+  .field input[type="text"] {
+    width: 100%;
+    padding: 7px 9px;
+    border: 1.5px solid #e2e8f0;
+    border-radius: 5px;
+    font-size: 0.88em;
+    transition: border-color 0.18s;
+  }
+  .field input:focus {
+    outline: none;
+    border-color: #2d6a9f;
+    box-shadow: 0 0 0 2px rgba(45,106,159,0.13);
+  }
+  .field textarea {
+    width: 100%;
+    padding: 7px 9px;
+    border: 1.5px solid #e2e8f0;
+    border-radius: 5px;
+    font-size: 0.88em;
+    resize: vertical;
+    min-height: 58px;
+    transition: border-color 0.18s;
+  }
+  .field textarea:focus {
+    outline: none;
+    border-color: #2d6a9f;
+    box-shadow: 0 0 0 2px rgba(45,106,159,0.13);
+  }
 
-.b1 { border-left-color: #e53e3e; } .b1 h2 { color: #c53030; }
-.b2 { border-left-color: #3182ce; } .b2 h2 { color: #2b6cb0; }
-.b3 { border-left-color: #38a169; } .b3 h2 { color: #276749; }
+  .b1 { border-left-color: #e53e3e; } .b1 h2 { color: #c53030; }
+  .b2 { border-left-color: #3182ce; } .b2 h2 { color: #2b6cb0; }
+  .b3 { border-left-color: #38a169; } .b3 h2 { color: #276749; }
 
-/* progress */
-.prog-wrap  { background:#e2e8f0; border-radius:99px; height:6px; margin-bottom:5px; overflow:hidden; }
-.prog-fill  { background:linear-gradient(90deg,#2d6a9f,#38a169); height:100%; width:0%; border-radius:99px; transition:width .3s; }
-.prog-label { font-size:0.74em; color:#718096; text-align:right; margin-bottom:14px; }
+  .prog-wrap  { background:#e2e8f0; border-radius:99px; height:6px; margin-bottom:5px; overflow:hidden; }
+  .prog-fill  { background:linear-gradient(90deg,#2d6a9f,#38a169); height:100%; width:0%; border-radius:99px; transition:width .3s; }
+  .prog-label { font-size:0.74em; color:#718096; text-align:right; margin-bottom:14px; }
 
-.btn-bar { display:flex; gap:10px; justify-content:center; flex-wrap:wrap; margin:20px 0 8px; }
-.btn {
-padding: 8px 20px; font-size:0.88em; font-weight:600;
-border:none; border-radius:7px; cursor:pointer;
-transition: transform .1s, box-shadow .18s;
-}
-.btn:hover { transform:translateY(-1px); box-shadow:0 3px 10px rgba(0,0,0,0.13); }
-.btn-primary   { background:#2d6a9f; color:#fff; }
-.btn-secondary { background:#e2e8f0; color:#1a202c; }
-.btn-danger    { background:#e53e3e; color:#fff; }
-.btn-success   { background:#38a169; color:#fff; }
+  .btn-bar { display:flex; gap:10px; justify-content:center; flex-wrap:wrap; margin:20px 0 4px; }
+  .btn {
+    padding: 8px 20px; font-size:0.88em; font-weight:600;
+    border:none; border-radius:7px; cursor:pointer;
+    transition: transform .1s, box-shadow .18s;
+  }
+  .btn:hover { transform:translateY(-1px); box-shadow:0 3px 10px rgba(0,0,0,0.13); }
+  .btn-primary   { background:#2d6a9f; color:#fff; }
+  .btn-danger    { background:#e53e3e; color:#fff; }
+  .btn-success   { background:#38a169; color:#fff; }
 
-footer { text-align:center; margin-top:14px; font-size:0.77em; color:#a0aec0; }
+  .pdf-hint {
+    text-align: center;
+    font-size: 0.78em;
+    color: #718096;
+    margin-bottom: 16px;
+    line-height: 1.6;
+  }
+  .pdf-steps {
+    display: inline-flex;
+    gap: 6px;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 4px;
+  }
+  .pdf-step {
+    background: #edf2f7;
+    border-radius: 20px;
+    padding: 2px 10px;
+    font-size: 0.85em;
+    color: #2d3748;
+  }
+  .pdf-arrow { color: #a0aec0; font-size: 0.85em; }
+
+  footer { text-align:center; margin-top:14px; font-size:0.77em; color:#a0aec0; }
 </style>
-
 </head>
 <body>
 <div class="container">
@@ -190,104 +203,112 @@ footer { text-align:center; margin-top:14px; font-size:0.77em; color:#a0aec0; }
 
   <div class="branches">
 
-```
-<!-- ── BRANCH 1: STAKEHOLDERS & POLICY ─────────────────────────── -->
-<div class="branch b1">
-  <h2>🤝 Stakeholders &amp; Policy <span class="slide-ref">Slides 9, 14–17, 21–24</span></h2>
-  <div class="fields-row">
-    <div class="field">
-      <label>Patients, Providers &amp; Payers — their roles</label>
-      <input type="text" placeholder="What is each group's primary role in the system?" oninput="upd()">
+    <!-- BRANCH 1: STAKEHOLDERS & POLICY -->
+    <div class="branch b1">
+      <h2>🤝 Stakeholders &amp; Policy <span class="slide-ref">Slides 9, 14–17, 21–24</span></h2>
+      <div class="fields-row">
+        <div class="field">
+          <label>Patients, Providers &amp; Payers — their roles</label>
+          <input type="text" placeholder="What is each group's primary role in the system?" oninput="upd()">
+        </div>
+        <div class="field">
+          <label>PBMs &amp; Manufacturers — what they do <span style="font-weight:400;color:#a0aec0">S22</span></label>
+          <input type="text" placeholder="What do PBMs do, and how concentrated is this market?" oninput="upd()">
+        </div>
+        <div class="field">
+          <label>Federal Agencies — FDA, CMS, Congress <span style="font-weight:400;color:#a0aec0">S9, S26</span></label>
+          <input type="text" placeholder="Which agency oversees what — and how do they affect drug pricing?" oninput="upd()">
+        </div>
+        <div class="field">
+          <label>ACA, IRA &amp; OBBBA — one key provision each <span style="font-weight:400;color:#a0aec0">S15–17</span></label>
+          <input type="text" placeholder="Name one key provision from each law." oninput="upd()">
+        </div>
+      </div>
+      <div class="field">
+        <label>Reflection — how do stakeholder incentives conflict? Give one example. <span style="font-weight:400;color:#a0aec0">S24</span></label>
+        <textarea placeholder="Which two stakeholders are in conflict, and what is the source of the tension?" oninput="upd()"></textarea>
+      </div>
     </div>
-    <div class="field">
-      <label>PBMs &amp; Manufacturers — what they do <span style="font-weight:400;color:#a0aec0">S22</span></label>
-      <input type="text" placeholder="What do PBMs do, and how concentrated is this market?" oninput="upd()">
-    </div>
-    <div class="field">
-      <label>Federal Agencies — FDA, CMS, Congress <span style="font-weight:400;color:#a0aec0">S9, S26</span></label>
-      <input type="text" placeholder="Which agency oversees what — and how do they affect drug pricing?" oninput="upd()">
-    </div>
-    <div class="field">
-      <label>ACA, IRA &amp; OBBBA — one key provision each <span style="font-weight:400;color:#a0aec0">S15–17</span></label>
-      <input type="text" placeholder="Name one key provision from each law." oninput="upd()">
-    </div>
-  </div>
-  <div class="field">
-    <label>Reflection — how do stakeholder incentives conflict? Give one example. <span style="font-weight:400;color:#a0aec0">S24</span></label>
-    <textarea placeholder="Which two stakeholders are in conflict, and what is the source of the tension?" oninput="upd()"></textarea>
-  </div>
-</div>
 
-<!-- ── BRANCH 2: ECONOMICS & SPENDING ──────────────────────────── -->
-<div class="branch b2">
-  <h2>📈 Economics &amp; Spending <span class="slide-ref">Slides 5, 8, 10, 11</span></h2>
-  <div class="fields-row">
-    <div class="field">
-      <label>U.S. NHE — headline figures <span style="font-weight:400;color:#a0aec0">S5</span></label>
-      <input type="text" placeholder="What are the three headline NHE figures for 2024?" oninput="upd()">
+    <!-- BRANCH 2: ECONOMICS & SPENDING -->
+    <div class="branch b2">
+      <h2>📈 Economics &amp; Spending <span class="slide-ref">Slides 5, 8, 10, 11</span></h2>
+      <div class="fields-row">
+        <div class="field">
+          <label>U.S. NHE — headline figures <span style="font-weight:400;color:#a0aec0">S5</span></label>
+          <input type="text" placeholder="What are the three headline NHE figures for 2024?" oninput="upd()">
+        </div>
+        <div class="field">
+          <label>U.S. vs. OECD peers <span style="font-weight:400;color:#a0aec0">S11</span></label>
+          <input type="text" placeholder="How does U.S. spending and life expectancy compare to OECD peers?" oninput="upd()">
+        </div>
+        <div class="field">
+          <label>The Iron Triangle <span style="font-weight:400;color:#a0aec0">S8</span></label>
+          <input type="text" placeholder="Name the three nodes and describe the core trade-off." oninput="upd()">
+        </div>
+        <div class="field">
+          <label>FFS vs. Value-Based Care <span style="font-weight:400;color:#a0aec0">S10</span></label>
+          <input type="text" placeholder="What is the key difference in what each model rewards?" oninput="upd()">
+        </div>
+      </div>
+      <div class="field">
+        <label>Reflection — apply the Iron Triangle to one policy (ACA, IRA, or OBBBA).</label>
+        <textarea placeholder="Which two triangle vertices does your chosen policy optimize? What does it sacrifice?" oninput="upd()"></textarea>
+      </div>
     </div>
-    <div class="field">
-      <label>U.S. vs. OECD peers <span style="font-weight:400;color:#a0aec0">S11</span></label>
-      <input type="text" placeholder="How does U.S. spending and life expectancy compare to OECD peers?" oninput="upd()">
-    </div>
-    <div class="field">
-      <label>The Iron Triangle <span style="font-weight:400;color:#a0aec0">S8</span></label>
-      <input type="text" placeholder="Name the three nodes and describe the core trade-off." oninput="upd()">
-    </div>
-    <div class="field">
-      <label>FFS vs. Value-Based Care <span style="font-weight:400;color:#a0aec0">S10</span></label>
-      <input type="text" placeholder="What is the key difference in what each model rewards?" oninput="upd()">
-    </div>
-  </div>
-  <div class="field">
-    <label>Reflection — apply the Iron Triangle to one policy (ACA, IRA, or OBBBA).</label>
-    <textarea placeholder="Which two triangle vertices does your chosen policy optimize? What does it sacrifice?" oninput="upd()"></textarea>
-  </div>
-</div>
 
-<!-- ── BRANCH 3: PHARMACOECONOMICS CONNECTION ───────────────────── -->
-<div class="branch b3">
-  <h2>🔬 Connection to Pharmacoeconomics <span class="slide-ref">Slides 23, 25, 26, 28–30</span></h2>
-  <div class="fields-row">
-    <div class="field">
-      <label>What is pharmacoeconomics? <span style="font-weight:400;color:#a0aec0">S28</span></label>
-      <input type="text" placeholder="Define pharmacoeconomics in your own words." oninput="upd()">
+    <!-- BRANCH 3: PHARMACOECONOMICS CONNECTION -->
+    <div class="branch b3">
+      <h2>🔬 Connection to Pharmacoeconomics <span class="slide-ref">Slides 23, 25, 26, 28–30</span></h2>
+      <div class="fields-row">
+        <div class="field">
+          <label>What is pharmacoeconomics? <span style="font-weight:400;color:#a0aec0">S28</span></label>
+          <input type="text" placeholder="Define pharmacoeconomics in your own words." oninput="upd()">
+        </div>
+        <div class="field">
+          <label>340B &amp; drug access <span style="font-weight:400;color:#a0aec0">S23</span></label>
+          <input type="text" placeholder="Who benefits from 340B and how does the discount work?" oninput="upd()">
+        </div>
+        <div class="field">
+          <label>FDA exclusivity &amp; approval pathways <span style="font-weight:400;color:#a0aec0">S26</span></label>
+          <input type="text" placeholder="Name two FDA designations and what each one grants." oninput="upd()">
+        </div>
+        <div class="field">
+          <label>GLP-1 case study — what stakeholder tension does it illustrate? <span style="font-weight:400;color:#a0aec0">S25</span></label>
+          <input type="text" placeholder="Which stakeholders are in tension, and what is each one's position?" oninput="upd()">
+        </div>
+      </div>
+      <div class="field">
+        <label>Reflection — why does the U.S. system create demand for PE evidence?</label>
+        <textarea placeholder="What feature of the U.S. system makes PE evidence necessary? Connect to at least one concept from this week." oninput="upd()"></textarea>
+      </div>
     </div>
-    <div class="field">
-      <label>340B &amp; drug access <span style="font-weight:400;color:#a0aec0">S23</span></label>
-      <input type="text" placeholder="Who benefits from 340B and how does the discount work?" oninput="upd()">
-    </div>
-    <div class="field">
-      <label>FDA exclusivity &amp; approval pathways <span style="font-weight:400;color:#a0aec0">S26</span></label>
-      <input type="text" placeholder="Name two FDA designations and what each one grants." oninput="upd()">
-    </div>
-    <div class="field">
-      <label>GLP-1 case study — what stakeholder tension does it illustrate? <span style="font-weight:400;color:#a0aec0">S25</span></label>
-      <input type="text" placeholder="Which stakeholders are in tension, and what is each one's position?" oninput="upd()">
-    </div>
-  </div>
-  <div class="field">
-    <label>Reflection — why does the U.S. system create demand for PE evidence?</label>
-    <textarea placeholder="What feature of the U.S. system makes PE evidence necessary? Connect to at least one concept from this week." oninput="upd()"></textarea>
-  </div>
-</div>
-```
 
   </div><!-- end .branches -->
 
   <div class="btn-bar no-print">
-    <button class="btn btn-primary"   onclick="savePDF()">🖨 Save as PDF</button>
-    <button class="btn btn-success"   onclick="saveProgress()">💾 Save Progress</button>
-    <button class="btn btn-secondary" onclick="loadProgress()">📂 Load Saved</button>
-    <button class="btn btn-danger"    onclick="clearAll()">🗑 Clear All</button>
+    <button class="btn btn-primary" onclick="savePDF()">📄 Save as PDF</button>
+    <button class="btn btn-success" onclick="downloadFilled()">💾 Download Filled Form</button>
+    <button class="btn btn-danger"  onclick="clearAll()">🗑 Clear All</button>
+  </div>
+
+  <div class="pdf-hint no-print">
+    <div class="pdf-steps">
+      <span class="pdf-step">Click "Save as PDF"</span>
+      <span class="pdf-arrow">→</span>
+      <span class="pdf-step">Print dialog opens</span>
+      <span class="pdf-arrow">→</span>
+      <span class="pdf-step">Set <strong>Destination</strong> to <strong>"Save as PDF"</strong></span>
+      <span class="pdf-arrow">→</span>
+      <span class="pdf-step">Click Save</span>
+    </div>
+    <div style="margin-top:6px;">Or use <strong>Download Filled Form</strong> to save your progress as an HTML file you can reopen later.</div>
   </div>
 
   <footer>PHPR 5120 &bull; Essentials of U.S. Healthcare Delivery &amp; Pharmacoeconomic Evaluation &bull; University of Toledo</footer>
 </div>
 
 <script>
-const KEY = 'phpr5120_w1_mm_v4';
-
 function upd() {
   const all = document.querySelectorAll('input[type="text"], textarea');
   const n   = Array.from(all).filter(e => e.value.trim()).length;
@@ -300,24 +321,13 @@ upd();
 
 function savePDF() { window.print(); }
 
-function saveProgress() {
-  const vals = Array.from(document.querySelectorAll('input[type="text"], textarea')).map(e => e.value);
-  try {
-    localStorage.setItem(KEY, JSON.stringify(vals));
-    alert('Saved! Reload and click "Load Saved" to continue.');
-  } catch(e) { alert('Could not save — storage may be disabled.'); }
-}
-
-function loadProgress() {
-  try {
-    const raw = localStorage.getItem(KEY);
-    if (!raw) { alert('No saved data found.'); return; }
-    JSON.parse(raw).forEach((v, i) => {
-      const el = document.querySelectorAll('input[type="text"], textarea')[i];
-      if (el) el.value = v;
-    });
-    upd(); alert('Loaded!');
-  } catch(e) { alert('Could not load.'); }
+function downloadFilled() {
+  const html = document.documentElement.outerHTML;
+  const blob = new Blob([html], {type: 'text/html'});
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = 'PHPR5120-Week1-MindMap-Filled.html';
+  a.click();
 }
 
 function clearAll() {
